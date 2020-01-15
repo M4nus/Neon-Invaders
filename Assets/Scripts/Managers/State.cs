@@ -2,6 +2,7 @@
 {
     protected GameController gameController;
 
+    // Update of every state
     public abstract void Tick();
 
     public virtual void OnStateEnter() {}

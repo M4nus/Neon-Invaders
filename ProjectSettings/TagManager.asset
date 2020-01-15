@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerBullet01
+  - PlayerBullet02
+  - EnemyBullet01
+  - EnemyBullet02
+  - Invader
   layers:
   - Default
   - TransparentFX

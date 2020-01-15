@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        // Setting Intro as first state
+        // Hope I get to that point :P
         SetState(new Intro(this));
     }
 
