@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Aircraft
 {
     public float playerSpeed;
-    public float bulletSpeed = 0.1f;
+    public Transform leftBorder;
+    public Transform rightBorder;
+
+    public void Start()
+    {
+        SetValues();
+    }
 
     public void Update()
     {
         Move();
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && canShoot)
             Shoot();
     }
 
@@ -20,15 +26,12 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * input * playerSpeed * Time.deltaTime);
     }
 
-    public void Shoot()
+    public override void SetValues()
     {
-        GameObject bullet = ObjectPooler.sharedInstance.GetPooledObject("PlayerBullet01");
-        if(bullet != null)
-        {
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
-            bullet.SetActive(true);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000 * bulletSpeed * Time.deltaTime);
-        }
+        bulletSpeed = -100f;
+        reloadTime = 0.5f;
+        canShoot = true;
+        bulletName = "PlayerBullet01";
+        chanceToFailAShot = 1;
     }
 }

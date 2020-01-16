@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E5377082-87C7-C297-9728-65E9492035D6}</ProjectGuid>
+    <ProjectGuid>{0D4A8593-B46D-936F-EAD6-5AA31E04179B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,10 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader01.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader02.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader03.cs" />
+    <Compile Include="Assets\Scripts\Managers\Aircraft.cs" />
     <Compile Include="Assets\Scripts\Managers\GameController.cs" />
     <Compile Include="Assets\Scripts\Managers\State.cs" />
     <Compile Include="Assets\Scripts\ObjectPooler\ObjectPooler.cs" />
@@ -77,76 +78,76 @@
     <Compile Include="Assets\Scripts\States\Pause.cs" />
     <Compile Include="Assets\Scripts\States\Preparation.cs" />
     <Reference Include="Unity.XR.Management">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0b9/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -326,13 +327,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0b9/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>W:/BigCheeseStudio/Neon-Invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0b9/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
