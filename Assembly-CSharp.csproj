@@ -77,6 +77,9 @@
     <Compile Include="Assets\Scripts\States\Menu.cs" />
     <Compile Include="Assets\Scripts\States\Pause.cs" />
     <Compile Include="Assets\Scripts\States\Preparation.cs" />
+    <None Include="Assets\Resources\Data\Invader02.txt" />
+    <None Include="Assets\Resources\Data\Invader01.txt" />
+    <None Include="Assets\Resources\Data\Invader03.txt" />
     <Reference Include="Unity.XR.Management">
       <HintPath>W:/Projects/Neon Invaders/Neon invaders/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>

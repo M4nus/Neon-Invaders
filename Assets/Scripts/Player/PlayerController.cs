@@ -30,8 +30,6 @@ public class PlayerController : Aircraft
     {
         bulletSpeed = -100f;
         reloadTime = 0.5f;
-        canShoot = true;
         bulletName = "PlayerBullet01";
-        chanceToFailAShot = 1;
     }
 }

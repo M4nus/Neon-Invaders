@@ -16,10 +16,6 @@ public class Invader03 : Aircraft
 
     public override void SetValues()
     {
-        bulletSpeed = 30f;
-        reloadTime = 30f;
-        canShoot = true;
-        bulletName = "EnemyBullet02";
-        chanceToFailAShot = 60;
+        ReadValuesFromFile("Invader03", ref bulletSpeed, ref reloadTime, ref bulletName);
     }
 }
