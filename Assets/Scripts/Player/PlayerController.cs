@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PlayerController : Aircraft
 {
-    public float playerSpeed;
     public Transform leftBorder;
     public Transform rightBorder;
+    public bool canControl;
+    public float playerSpeed;
 
     public void Start()
     {
         SetValues();
+        canControl = false;
     }
 
     public void Update()
     {
-        Move();
-        if(Input.GetKey(KeyCode.Space) && canShoot)
-            Shoot();
+        if(canControl)
+        {
+            Move();
+            if(Input.GetKey(KeyCode.Space) && canShoot)
+                Shoot();
+        }
     }
 
     public void Move()

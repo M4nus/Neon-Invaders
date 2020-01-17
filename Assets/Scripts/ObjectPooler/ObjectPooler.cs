@@ -19,10 +19,15 @@ public class ObjectPooler : MonoBehaviour
 
     private void Awake()
     {
+        if(sharedInstance == null)
+            sharedInstance = this;
+        else
+            Destroy(this.gameObject);
+
         sharedInstance = this;
     }
 
-    private void Start()
+    public void Start()
     {
         pooledObjects = new List<GameObject>();
         foreach(ObjectPoolItem item in itemsToPool)
@@ -59,5 +64,34 @@ public class ObjectPooler : MonoBehaviour
             }
         }
         return null;
+    }
+
+    // Checking whether entire group of objects is active or inactive
+    public bool CheckActivity(string tag)
+    {
+        bool active = false;
+        for(int i = 0; i < pooledObjects.Count; i++)
+        {
+            if(pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
+            {
+                active = true;
+            }
+        }
+        return active;
+    }
+
+    // Disableing all the pooled object
+    public void CleanAllObjects()
+    {
+        foreach(ObjectPoolItem item in itemsToPool)
+        {
+            for(int i = 0; i < pooledObjects.Count; i++)
+            {
+                if(pooledObjects[i].activeInHierarchy)
+                {
+                    pooledObjects[i].SetActive(false);
+                }
+            }
+        }
     }
 }

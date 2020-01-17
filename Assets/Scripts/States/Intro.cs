@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Intro : State
 {
-
     public Intro(GameController gameController) : base(gameController) {}
-
+    
 
     public override void Tick()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Main");
+            gameController.SetState(new Preparation(gameController));
+        }
     }
 
     public override void OnStateEnter()
     {
-        base.OnStateEnter();
+        gameController.isIntro = true;
     }
 
     public override void OnStateExit()
     {
-        base.OnStateExit();
+        gameController.isIntro = false;
     }
 }

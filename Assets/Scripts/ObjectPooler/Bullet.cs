@@ -11,16 +11,24 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.layer != LayerMask.NameToLayer("Unbreakable"))
         {
+            // Player is hit
             if(collision.gameObject.tag == "Player")
             {
                 collision.gameObject.GetComponent<PlayerStats>().DealDamage(damage);
             }
+            // Invaders + bullets are hit
             else if(collision.gameObject.layer == LayerMask.NameToLayer("Invaders"))
             {
-                // I will implement that later
+                // Not sure how to pass score from enemies there without doing a mess, so leaving that for later
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().ScorePoints(10);
+                // Making invaders speed with every kill
+                GameObject.Find("Enemies").GetComponent<EnemiesMovement>().invadersSpeed *= 1.1f;
                 collision.gameObject.SetActive(false);
+                // Checking whether all the invaders were killed.
+                if(!ObjectPooler.sharedInstance.CheckActivity("Invader01") && !ObjectPooler.sharedInstance.CheckActivity("Invader02") && !ObjectPooler.sharedInstance.CheckActivity("Invader01"))
+                    GameObject.Find("GameController").GetComponent<GameController>().isWon = true;
             }
+            // Everything else that's breakable is hit
             else
                 collision.gameObject.SetActive(false);
         }
@@ -29,6 +37,7 @@ public class Bullet : MonoBehaviour
 
     private void OnDisable()
     {
+        // Making sure that bullets won't spawn with more speed
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 }

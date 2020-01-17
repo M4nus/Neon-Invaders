@@ -12,16 +12,16 @@ public class WaveSpawner : MonoBehaviour
     private int collumns;
     
 
-    private void Start()
+    private void Awake()
     {
         rows = 3;
         collumns = 10;
-        basePosition = enemySpawnPoint.position;
-        Spawn();
+        basePosition = new Vector2(-4.5f, 4f);
     }
 
     public void Spawn()
     {
+        gameObject.transform.position = Vector2.zero;
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < collumns; j++)
@@ -47,5 +47,6 @@ public class WaveSpawner : MonoBehaviour
             }
             enemySpawnPoint.position = new Vector2(basePosition.x, enemySpawnPoint.position.y - 0.5f);
         }
+        enemySpawnPoint.position = basePosition;
     }
 }

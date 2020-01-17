@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public abstract class Aircraft : MonoBehaviour
 {
@@ -21,7 +22,24 @@ public abstract class Aircraft : MonoBehaviour
     // Reading values from the file
     public void ReadValuesFromFile(string name)
     {
-        string path = "Assets/Resources/Data/" + name + ".txt";
+        // It works well at assigning variables, but for some reason enemies doesn't shoot if Resources.Load() way of getting external files is enabled.
+        // On the other hand, using StreamReader works without any problems, but it can't be build as build files has different paths
+        // Have no idea how to fix that.
+
+        /*TextAsset file = (TextAsset)Resources.Load(name);
+        
+        string fileText = file.text;
+        string[] lines = Regex.Split(fileText, "\n");
+        for(int i = 0; i < lines.Length; i++)
+        {
+            bulletSpeed = float.Parse(lines[0]);
+            reloadTime = float.Parse(lines[1]);
+            bulletName = lines[2];
+            damage = int.Parse(lines[3]);
+            points = int.Parse(lines[4]);
+        }*/
+
+        string path = "Assets/Resources/" + name + ".txt";
 
         string line;
         int lineIndex = 0;

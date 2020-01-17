@@ -4,6 +4,15 @@ public class GameController : MonoBehaviour
 {
     private State currentState;
 
+    public bool isPaused;
+    public bool isInvasion;
+    public bool isPreparing;
+    public bool isIntro;
+    public bool isDead;
+    public bool isWon;
+    public bool isSceneLoaded;
+
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -11,8 +20,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        // Setting Intro as first state
-        // Hope I get to that point :P
         SetState(new Intro(this));
     }
 

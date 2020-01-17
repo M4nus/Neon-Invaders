@@ -11,15 +11,16 @@ public class PlayerStats : MonoBehaviour
 
     public event EventHandler<DamagedEventArgs> Damaged;
     public event EventHandler<ScoredEventArgs> Scored;
-    public event EventHandler Died;
+    
 
-    // Start is called before the first frame update
     void Start()
     {
         maxHealth = 3;
         currentHealth = maxHealth;
         playerPoints = 0;
     }
+
+    #region Functionalities
 
     public void ScorePoints(int points)
     {
@@ -29,12 +30,28 @@ public class PlayerStats : MonoBehaviour
 
     public void DealDamage(int damage)
     {
+        // Making sure that currentHealth won't go beneath 0
         currentHealth = Mathf.Max(currentHealth - damage, 0);
         Damaged(this, new DamagedEventArgs(damage));
 
         if(currentHealth == 0)
-            Died(this, new EventArgs());
+            Die();
     }
+
+    public void Die()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().isDead = true;
+    }
+
+    public void ResetStats()
+    {
+        currentHealth = maxHealth;
+        playerPoints = 0;
+    }
+
+    #endregion
+
+    #region EventArgs
 
     public class DamagedEventArgs : EventArgs
     {
@@ -56,5 +73,5 @@ public class PlayerStats : MonoBehaviour
         public int Points { get; private set; }
     }
 
-
+    #endregion
 }

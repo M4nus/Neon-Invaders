@@ -7,16 +7,22 @@ public class End : State
 
     public override void Tick()
     {
-
+        if(gameController.isPreparing)
+            gameController.SetState(new Preparation(gameController));
     }
 
     public override void OnStateEnter()
     {
-        base.OnStateEnter();
+        gameController.isDead = true;
+        GameObject.Find("GameManager").GetComponent<UIFunctionalities>().Dead(true);
+        Time.timeScale = 0f;
     }
 
     public override void OnStateExit()
     {
-        base.OnStateExit();
+        gameController.isDead = false;
+        GameObject.Find("GameManager").GetComponent<UIFunctionalities>().Dead(false);
+        GameObject.Find("GameManager").GetComponent<UIFunctionalities>().wave = 1;
+        Time.timeScale = 1f;
     }
 }

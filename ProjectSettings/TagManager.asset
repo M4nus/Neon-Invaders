@@ -12,6 +12,8 @@ TagManager:
   - Invader02
   - Invader03
   - EnemyBorder
+  - Spawner
+  - Wave
   layers:
   - Default
   - TransparentFX

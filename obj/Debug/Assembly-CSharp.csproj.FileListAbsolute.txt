@@ -1,0 +1,2 @@
+W:\Projects\Neon Invaders\Neon invaders\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+W:\Projects\Neon Invaders\Neon invaders\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
