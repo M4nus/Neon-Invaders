@@ -9,14 +9,17 @@ public abstract class Aircraft : MonoBehaviour
     protected float reloadTime;
     protected bool canShoot = false;
     protected string bulletName;
+    protected int damage;
+    protected int points;
 
     #region Settings
+
 
     // Assigning values
     public abstract void SetValues();
 
     // Reading values from the file
-    public void ReadValuesFromFile(string name, ref float bulletSpeed, ref float reloadTime, ref string bulletName)
+    public void ReadValuesFromFile(string name)
     {
         string path = "Assets/Resources/Data/" + name + ".txt";
 
@@ -33,14 +36,18 @@ public abstract class Aircraft : MonoBehaviour
                 reloadTime = float.Parse(line);
             else if(lineIndex == 2)
                 bulletName = line;
+            else if(lineIndex == 3)
+                damage = int.Parse(line);
+            else if(lineIndex == 4)
+                points = int.Parse(line);
             lineIndex++;
         }
         reader.Close();
     }
 
+    // To not make aliens shoot simultaneously
     public IEnumerator DelayBeforeShot()
     {
-        // To not make aliens shoot simultaneously
         yield return new WaitForSeconds(Random.Range(2f, 15f));
         canShoot = true;
     }
@@ -65,6 +72,7 @@ public abstract class Aircraft : MonoBehaviour
         GameObject bullet = ObjectPooler.sharedInstance.GetPooledObject(bulletName);
         if(bullet != null)
         {
+            bullet.GetComponent<Bullet>().damage = damage;
             bullet.transform.position = transform.position;
             bullet.SetActive(true);
             bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 100 * bulletSpeed * Time.fixedDeltaTime);

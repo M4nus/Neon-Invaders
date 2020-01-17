@@ -5,12 +5,13 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int maxHealth;
-    private int currentHealth;
-    private int playerPoints;
+    public int maxHealth;
+    public int currentHealth;
+    public int playerPoints;
 
     public event EventHandler<DamagedEventArgs> Damaged;
     public event EventHandler<ScoredEventArgs> Scored;
+    public event EventHandler Died;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,19 @@ public class PlayerStats : MonoBehaviour
         playerPoints = 0;
     }
 
-    void ScorePoints(int points)
+    public void ScorePoints(int points)
     {
         playerPoints += points;
-        if(Scored != null)
-            Scored(this, new ScoredEventArgs(points));
+        Scored(this, new ScoredEventArgs(points));
+    }
+
+    public void DealDamage(int damage)
+    {
+        currentHealth = Mathf.Max(currentHealth - damage, 0);
+        Damaged(this, new DamagedEventArgs(damage));
+
+        if(currentHealth == 0)
+            Died(this, new EventArgs());
     }
 
     public class DamagedEventArgs : EventArgs
@@ -46,4 +55,6 @@ public class PlayerStats : MonoBehaviour
 
         public int Points { get; private set; }
     }
+
+
 }

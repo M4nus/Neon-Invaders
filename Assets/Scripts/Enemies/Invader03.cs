@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Invader03 : Aircraft
 {
-    void Start()
+    void OnEnable()
     {
         SetValues();
         StartCoroutine(DelayBeforeShot());
@@ -17,6 +17,6 @@ public class Invader03 : Aircraft
 
     public override void SetValues()
     {
-        ReadValuesFromFile("Invader03", ref bulletSpeed, ref reloadTime, ref bulletName);
+        ReadValuesFromFile("Invader03");
     }
 }
