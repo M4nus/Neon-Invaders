@@ -4,6 +4,11 @@ public class GameController : MonoBehaviour
 {
     private State currentState;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         // Setting Intro as first state

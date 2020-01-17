@@ -28,8 +28,9 @@ public class PlayerController : Aircraft
 
     public override void SetValues()
     {
-        bulletSpeed = -100f;
+        bulletSpeed = -200f;
         reloadTime = 0.5f;
         bulletName = "PlayerBullet01";
+        canShoot = true;
     }
 }

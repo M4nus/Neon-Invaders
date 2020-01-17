@@ -62,15 +62,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader01.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader02.cs" />
     <Compile Include="Assets\Scripts\Enemies\Invader03.cs" />
+    <Compile Include="Assets\Scripts\EnemiesMovement.cs" />
     <Compile Include="Assets\Scripts\Managers\Aircraft.cs" />
     <Compile Include="Assets\Scripts\Managers\GameController.cs" />
     <Compile Include="Assets\Scripts\Managers\State.cs" />
+    <Compile Include="Assets\Scripts\Managers\WaveSpawner.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler\Bullet.cs" />
     <Compile Include="Assets\Scripts\ObjectPooler\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\States\End.cs" />
     <Compile Include="Assets\Scripts\States\Intro.cs" />
     <Compile Include="Assets\Scripts\States\Invasion.cs" />

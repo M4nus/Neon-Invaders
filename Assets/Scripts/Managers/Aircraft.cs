@@ -7,8 +7,10 @@ public abstract class Aircraft : MonoBehaviour
 {
     protected float bulletSpeed;
     protected float reloadTime;
-    protected bool canShoot = true;
+    protected bool canShoot = false;
     protected string bulletName;
+
+    #region Settings
 
     // Assigning values
     public abstract void SetValues();
@@ -36,6 +38,17 @@ public abstract class Aircraft : MonoBehaviour
         reader.Close();
     }
 
+    public IEnumerator DelayBeforeShot()
+    {
+        // To not make aliens shoot simultaneously
+        yield return new WaitForSeconds(Random.Range(2f, 15f));
+        canShoot = true;
+    }
+
+    #endregion
+
+    #region Abilities
+
     public virtual IEnumerator Reload()
     {
         float currentTime = 0f;
@@ -54,9 +67,11 @@ public abstract class Aircraft : MonoBehaviour
         {
             bullet.transform.position = transform.position;
             bullet.SetActive(true);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 100 * bulletSpeed * Time.deltaTime);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 100 * bulletSpeed * Time.fixedDeltaTime);
             canShoot = false;
             StartCoroutine(Reload());
         }
     }
+
+    #endregion
 }

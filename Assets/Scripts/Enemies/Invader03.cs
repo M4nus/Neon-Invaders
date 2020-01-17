@@ -6,6 +6,7 @@ public class Invader03 : Aircraft
     void Start()
     {
         SetValues();
+        StartCoroutine(DelayBeforeShot());
     }
 
     void Update()
